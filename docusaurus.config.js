@@ -12,9 +12,9 @@ const config = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "/favicon.ico",
-  organizationName: "mentorship-sponsorship",
-  projectName: "mentorship-guide-docs",
+  favicon: "/logo.png",
+  organizationName: "Necakco",
+  projectName: "Necakco",
   themes: [
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
@@ -30,13 +30,14 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
+          routeBasePath: "/anime",
           editUrl:
-            "https://github.com/mentorship-sponsorship/mentorship-guide-docs/blob/main/",
+          "https://github.com/mentorship-sponsorship/mentorship-guide-docs/blob/main/",
         },
         blog: {
           showReadingTime: true,
           editUrl:
-            "https://github.com/mentorship-sponsorship/mentorship-guide-docs/blob/main/",
+          "https://github.com/mentorship-sponsorship/mentorship-guide-docs/blob/main/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -44,29 +45,48 @@ const config = {
       }),
     ],
   ],
-
+  
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'toumasidebar',
+        path: 'touma',
+        routeBasePath: 'touma',
+        sidebarPath: require.resolve('./toumasidebar.js'),
+        // ... other options
+      },
+    ],
+  ],
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      navbar: {
-        title: "Mentorship Guide",
-        logo: {
-          alt: "Mentorship Guide Logo",
-          src: "img/mg-book.svg",
-        },
-        items: [
-          {
-            type: "doc",
-            docId: "what-why-mentorship",
-            position: "left",
-            label: "Read",
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  ({
+    navbar: {
+      title: "Index-Reup",
+      logo: {
+        alt: "logo",
+        src: "logo.png",
+      },
+      items: [
+        {
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: 'App',
           },
-          { to: "/docs/contributing", label: "Contribute", position: "left" },
           {
-            href: "https://github.com/mentorship-sponsorship/mentorship-guide-docs",
-            position: "right",
-            className: "header-github-link",
-            "aria-label": "GitHub repository",
+            label: 'LightNovel',
+            position: 'left',
+            items: [
+              {to: '/touma', label: 'Cấm Thư Ma Thuật Index'},
+
+            ]
+          },
+          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            href: 'https://github.com/facebook/docusaurus',
+            label: 'GitHub',
+            position: 'right',
           },
         ],
       },

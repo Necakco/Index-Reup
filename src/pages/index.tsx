@@ -16,7 +16,7 @@ function HomepageHeader() {
   return (
     <header className={clsx("hero--primary", styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">Mentorship should be accessible to all</h1>
+        <h1 className="hero__title">Anime,Mangan,LightNovel - (reup)</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
@@ -42,8 +42,7 @@ export default function Home(): JSX.Element {
         <HomepageFeatures />
         <WaveBottomShapeDivider />
         <HeroTitleSecondary
-          title="Mentorship is an act, experience, and opportunity to share what you
-          can, when you can, how you can."
+          title="Index-Reup"
           ctaText="Read the Guide 📖"
           ctaLink="/docs/what-why-mentorship"
         />
